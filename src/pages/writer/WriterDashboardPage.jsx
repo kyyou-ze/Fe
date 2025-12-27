@@ -1,7 +1,12 @@
 import { Link } from 'react-router-dom';
 import { BookOpen, FileText, Eye, Heart, TrendingUp, Users, MessageSquare, Plus } from 'lucide-react';
+import WriterPremiumBanner from '../../components/ui/WriterPremiumBanner';
+import usePaymentStore from '../../store/paymentStore';
 
 const WriterDashboardPage = () => {
+  const { isPremium } = usePaymentStore();
+
+
   const stats = {
     totalNovels: 5,
     totalChapters: 127,
@@ -35,7 +40,9 @@ const WriterDashboardPage = () => {
   const isMobile = window.innerWidth < 768;
 
   return (
-    <div>
+      <div>
+    {!isPremium && <WriterPremiumBanner />}
+    {/* rest of dashboard */}
       <div style={{
         display: 'flex',
         flexDirection: isMobile ? 'column' : 'row',

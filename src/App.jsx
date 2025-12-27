@@ -16,6 +16,10 @@ import MyNovelsPage from './pages/writer/MyNovelsPage';
 import NovelFormPage from './pages/writer/NovelFormPage';
 import ChapterListPage from './pages/writer/ChapterListPage';
 import ChapterEditorPage from './pages/writer/ChapterEditorPage';
+import PremiumPage from './pages/PremiumPage';
+import WriterPremiumBanner from './components/ui/WriterPremiumBanner';
+
+
 
 const NotFoundPage = () => (
   <div className="flex items-center justify-center" style={{ minHeight: '60vh' }}>
@@ -43,6 +47,7 @@ function App() {
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/profile/:userId" element={<ProfilePage />} />
         <Route path="/settings" element={<SettingsPage />} />
+        <Route path="/premium" element={<PremiumPage />} />
       </Route>
       
       {/* Reading Page - No Layout */}
